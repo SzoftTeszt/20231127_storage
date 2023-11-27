@@ -9,15 +9,23 @@ import { BaseService } from '../base.service';
 export class UploadFileComponent {
 
   selectedFiles:any
+  percentage=0
 
   constructor(private base:BaseService){}
 
   fileSelect(event:any){
-    this.selectedFiles=event.target.files[0]
-    console.log(event.target.files)
+    if (event.target.files[0].type.includes('image'))
+    {
+      this.selectedFiles=event.target.files[0]
+      console.log(event.target.files)
+      this.percentage=0
+    }
   }
 
   uploadFile(){
-    this.base.uploadFile(this.selectedFiles)
+    this.base.uploadFile(this.selectedFiles).subscribe(
+      (p:any)=>this.percentage=p?Math.round(p):0
+    )
+    this.selectedFiles=undefined
   }
 }
