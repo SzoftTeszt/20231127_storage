@@ -1,0 +1,13 @@
+.thumbnail{
+    width:100px;
+    height:100px;
+}
+.kep{
+    width:300px;
+    height:300px;
+}
+.images{
+    width:300px;
+    height:400px;
+    overflow: hidden;
+}

@@ -10,6 +10,7 @@ import { map } from 'rxjs';
 export class FileListComponent {
 
   filesData:any
+  images:any=[]
 
   constructor(private base:BaseService){
     this.base.getFilesData().snapshotChanges().pipe(
@@ -17,7 +18,14 @@ export class FileListComponent {
         (changes:any)=> changes.map((c:any)=> ({ key: c.payload.key, ...c.payload.val()}))
       )
     ).subscribe(
-      (data)=>this.filesData=data
+      (data)=>{
+        this.filesData=data
+        this.images=[]
+        this.filesData.forEach( (e:any) => {
+          this.images.push(e.url)
+          console.log(e.url)
+        });
+      }
     )
   }
 

@@ -11,12 +11,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { FileListComponent } from './file-list/file-list.component';
 import { Environments } from './environments';
+import { ImagesViewComponent } from './images-view/images-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadFileComponent,
-    FileListComponent
+    FileListComponent,
+    ImagesViewComponent
   ],
   imports: [
     BrowserModule,

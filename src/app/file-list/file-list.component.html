@@ -1,5 +1,5 @@
 <!-- {{filesData|json}} -->
-
+<!-- {{images|json}} -->
 
 <ul class="list-group">
     <li *ngFor="let f of filesData" class="list-group-item">
@@ -11,3 +11,5 @@
     </li>
    
   </ul>
+
+  <app-images-view [images]="images"></app-images-view>

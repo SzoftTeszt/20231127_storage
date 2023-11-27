@@ -1,0 +1,11 @@
+Képek
+<!-- {{images|json}} -->
+
+<div class="images">
+    <div class="image">
+        <img class="kep" [src]="images[aktIndex]">
+    </div>
+    <div class="tape">
+        <img (click)="selectImage(ind)" class="thumbnail" *ngFor="let i of images; let ind = index" [src]="i" alt="product">
+    </div>
+</div>
