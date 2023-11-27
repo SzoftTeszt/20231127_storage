@@ -35,4 +35,15 @@ export class BaseService {
     })
     return updateTask.percentageChanges()
   }
+
+
+  deleteFile(file:any){
+    this.storage.ref("/kepek/"+file.name).delete().subscribe(
+      ()=> this.refFilesData.remove(file.key).then(
+        ()=>console.log("Sikeres törlés")
+      ).catch(
+        ()=>console.log("HIBA! A törlésnél!")
+      )
+    )
+  }
 }

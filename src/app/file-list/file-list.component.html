@@ -1,1 +1,13 @@
-{{filesData|json}}
+<!-- {{filesData|json}} -->
+
+
+<ul class="list-group">
+    <li *ngFor="let f of filesData" class="list-group-item">
+
+        <a [href]="f.url">{{f.name}}</a>
+        <button (click)="deleteFile(f)" type="button" style="float:right" class="btn btn-primary btn-sm">
+        Törlés</button>
+
+    </li>
+   
+  </ul>

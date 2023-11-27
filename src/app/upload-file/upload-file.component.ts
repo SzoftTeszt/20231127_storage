@@ -10,6 +10,7 @@ export class UploadFileComponent {
 
   selectedFiles:any
   percentage=0
+  progressVisible=false
 
   constructor(private base:BaseService){}
 
@@ -23,8 +24,15 @@ export class UploadFileComponent {
   }
 
   uploadFile(){
+    this.progressVisible=true
     this.base.uploadFile(this.selectedFiles).subscribe(
-      (p:any)=>this.percentage=p?Math.round(p):0
+      (p:any)=>{
+        this.percentage=p?Math.round(p):0
+        if (this.percentage==100) 
+        setTimeout(()=>{
+          this.progressVisible=false
+    },2000)
+      }
     )
     this.selectedFiles=undefined
   }

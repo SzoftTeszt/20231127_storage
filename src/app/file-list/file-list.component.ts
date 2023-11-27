@@ -21,5 +21,8 @@ export class FileListComponent {
     )
   }
 
+  deleteFile(f:any){
+    this.base.deleteFile(f)
+  }
 
 }
