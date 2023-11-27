@@ -2,6 +2,6 @@
 
 <div class="mb-3">
     <label for="formFile" class="form-label">Válaszd ki a fájlt!</label>
-    <input class="form-control mb-3" type="file" id="formFile">
-    <button type="button" class="btn btn-primary">Feltöltés</button>
+    <input (change)="fileSelect($event)" class="form-control mb-3" type="file" id="formFile">
+    <button (click)="uploadFile()" type="button" class="btn btn-primary">Feltöltés</button>
 </div>
